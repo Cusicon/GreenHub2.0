@@ -2,11 +2,11 @@
 <main class="main">
     <div class="page-header page-header-bg" style="background-image: url('assets/images/slider/slider-2.jpg');">
         <div class="container">
-            <h1>
-                <span>OUR</span>
-                FARM COMMUNITY
-                <br>
-            </h1>
+        <h1>
+            <span>OUR</span>
+            FARM COMMUNITY
+            <br>
+        </h1>
         </div><!-- End .container -->
     </div>
     <div class="team-section">
@@ -32,9 +32,9 @@
                 <% for(var i = 0; i < users.length; i++) { %>
                 <% var user = users[i]; %>
                 <div class="col-6 col-md-4 col-xl-3">
-                    <div class="product">
+                    <div class="product" style="float: left;">
                         <figure class="product-image-container">
-                            <a href="/community" class="product-image" style="background-color: #fff;">
+                            <a href="/community/<%= user.username %>" class="product-image" style="background-color: #fff;">
                                 <img src="/assets/images/profile-img/<%= user.profileImage || `profileImage-${i}.jpg` %>" alt="profileImage">
                             </a>
                             <a href="#"><span class="product-label label-hot">Call</span></a>
@@ -46,7 +46,7 @@
                                 </div><!-- End .product-ratings -->
                             </div><!-- End .product-container -->
                             <h2 class="product-title">
-                                <a href="/community">
+                                <a href="/community/<%= user.username %>">
                                     <%= user.full_name %></a>
                             </h2>
                             <div class="price-box">
@@ -55,16 +55,8 @@
                             </div><!-- End .price-box -->
 
                             <div class="product-action">
-                                <a href="#" class="paction add-wishlist" title="Add to Partner">
-                                    <span>Add to Partner</span>
-                                </a>
-
-                                <a href="/community" class="paction add-cart" title="View profile">
+                                <a href="/community/<%= user.username %>" class="paction add-cart" title="View profile">
                                     <span>View profile</span>
-                                </a>
-
-                                <a href="#" class="paction add-compare typcn typcn-message-typing" title="Send a message">
-                                    <span>Send a message</span>
                                 </a>
                             </div><!-- End .product-action -->
                         </div><!-- End .product-details -->

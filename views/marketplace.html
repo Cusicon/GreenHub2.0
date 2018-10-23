@@ -17,7 +17,7 @@
                     <div class="banner-content container offset-1">
                         <h2 class="banner-subtitle">check out over <span>200+</span></h2>
                         <h1 class="banner-title">
-                            Coasts & Jackets For Woman
+                            Fresh crops and Farm equipments
                         </h1>
                     </div><!-- End .banner-content -->
                 </div><!-- End .banner -->
@@ -25,7 +25,7 @@
                 <nav class="toolbox">
                     <div class="toolbox-left">
                         <div class="toolbox-item toolbox-sort">
-                            <label>Sort By:</label>
+                            <label>Sort By</label>
 
                             <div class="select-custom">
                                 <select name="orderby" class="form-control">
@@ -38,7 +38,7 @@
                     </div><!-- End .toolbox-left -->
 
                     <div class="toolbox-item toolbox-show">
-                        <label>Show:</label>
+                        <label>Show</label>
 
                         <div class="select-custom">
                             <select name="count" class="form-control">
@@ -52,44 +52,39 @@
 
                 <div class="row row-sm">
                     <% if(typeof items != undefined || null) { %>
-                        <% for(var i = 0; i < items.length; i++) { %>
-                            <% var item = items[i]; %>
-                            <div class="col-6 col-md-4 col-xl-3">
-                                <div class="product">
-                                    <figure class="product-image-container">
-                                        <a href="/marketplace/view" class="product-image">
-                                            <img src="/assets/images/products/uploaded/<%= item.productImage || `productImage-${i}.jpg` %>" alt="product">
-                                        </a>
-                            
-                                    </figure>
-                                    <div class="product-details">
-                                        <div class="ratings-container">
-                                            <br><br>
-                                        </div><!-- End .product-container -->
-                                        <h2 class="product-title">
-                                            <a href="/marketplace/view"><%= item.product_name %></a>
-                                        </h2>
-                                        <div class="price-box">
-                                            <span class="product-price">N<%= item.price %>.00</span>
-                                        </div><!-- End .price-box -->
-                            
-                                        <div class="product-action">
-                                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                                <span>Add to Wishlist</span>
-                                            </a>
-                            
-                                            <a href="/marketplace/view" class="paction add-cart" title="Add to Basket">
-                                                <span>Add to Basket</span>
-                                            </a>
-                            
-                                            <a href="#" class="paction add-compare" title="Add to Compare">
-                                                <span>Add to Compare</span>
-                                            </a>
-                                        </div><!-- End .product-action -->
-                                    </div><!-- End .product-details -->
-                                </div><!-- End .product -->
-                            </div><!-- End .col-xl-3 -->
-                        <% } %>
+                    <% for(var i = 0; i < items.length; i++) { %>
+                    <% var item = items[i]; %>
+                    <div class="col-6 col-md-4 col-xl-3">
+                        <div class="product">
+                            <figure class="product-image-container">
+                                <a href="/marketplace/view/<%= item._id %>" class="product-image">
+                                    <img src="/assets/images/products/uploaded/<%= item.productImage || `productImage-${i}.jpg` %>"
+                                        alt="product">
+                                </a>
+
+                            </figure>
+                            <div class="product-details">
+                                <div class="ratings-container">
+                                    <br><br>
+                                </div><!-- End .product-container -->
+                                <h2 class="product-title">
+                                    <a href="/marketplace/view/<%= item._id %>">
+                                        <%= item.product_name %></a>
+                                </h2>
+                                <div class="price-box">
+                                    <span class="product-price">N
+                                        <%= item.price %>.00</span>
+                                </div><!-- End .price-box -->
+
+                                <div class="product-action">
+                                    <a href="/marketplace/view/<%= item._id %>" class="paction add-cart" title="Add to Basket">
+                                        <span>Add to Basket</span>
+                                    </a>
+                                </div><!-- End .product-action -->
+                            </div><!-- End .product-details -->
+                        </div><!-- End .product -->
+                    </div><!-- End .col-xl-3 -->
+                    <% } %>
                     <% } %>
                 </div>
                 <br><br>
@@ -118,23 +113,23 @@
                 <div class="sidebar-wrapper">
                     <div class="widget widget-featured">
                         <h3 class="widget-title">Featured Proucts</h3>
-                    
+
                         <div class="widget-body">
                             <div class="owl-carousel widget-featured-products">
                                 <div class="featured-col">
                                     <div class="product product-sm">
                                         <figure class="product-image-container">
-                                            <a href="/marketplace/view" class="product-image">
+                                            <a href="/marketplace/view/<%= item._id %>" class="product-image">
                                                 <img src="/assets/images/products/uploaded/productImage-1.jpg" alt="product">
                                             </a>
                                         </figure>
                                         <div class="product-details">
                                             <h2 class="product-title">
-                                                <a href="/marketplace/view">Red Rasbery</a>
+                                                <a href="/marketplace/view/<%= item._id %>">Red Rasbery</a>
                                             </h2>
                                             <div class="ratings-container">
                                                 <div class="product-ratings">
-                                                    <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                                    <span class="ratings" style="width: 80%;"></span><!-- End .ratings -->
                                                 </div><!-- End .product-ratings -->
                                             </div><!-- End .product-container -->
                                             <div class="price-box">
@@ -142,20 +137,20 @@
                                             </div><!-- End .price-box -->
                                         </div><!-- End .product-details -->
                                     </div><!-- End .product -->
-                    
+
                                     <div class="product product-sm">
                                         <figure class="product-image-container">
-                                            <a href="/marketplace/view" class="product-image">
+                                            <a href="/marketplace/view/<%= item._id %>" class="product-image">
                                                 <img src="/assets/images/products/uploaded/productImage-2.jpg" alt="product">
                                             </a>
                                         </figure>
                                         <div class="product-details">
                                             <h2 class="product-title">
-                                                <a href="/marketplace/view">Fresh Cocoa</a>
+                                                <a href="/marketplace/view/<%= item._id %>">Fresh Cocoa</a>
                                             </h2>
                                             <div class="ratings-container">
                                                 <div class="product-ratings">
-                                                    <span class="ratings" style="width:20%"></span><!-- End .ratings -->
+                                                    <span class="ratings" style="width: 20%;"></span><!-- End .ratings -->
                                                 </div><!-- End .product-ratings -->
                                             </div><!-- End .product-container -->
                                             <div class="price-box">
@@ -164,20 +159,20 @@
                                             </div><!-- End .price-box -->
                                         </div><!-- End .product-details -->
                                     </div><!-- End .product -->
-                    
+
                                     <div class="product product-sm">
                                         <figure class="product-image-container">
-                                            <a href="/marketplace/view" class="product-image">
+                                            <a href="/marketplace/view/<%= item._id %>" class="product-image">
                                                 <img src="/assets/images/products/uploaded/productImage-3.jpg" alt="product">
                                             </a>
                                         </figure>
                                         <div class="product-details">
                                             <h2 class="product-title">
-                                                <a href="/marketplace/view">Every every</a>
+                                                <a href="/marketplace/view/<%= item._id %>">Every every</a>
                                             </h2>
                                             <div class="ratings-container">
                                                 <div class="product-ratings">
-                                                    <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                                    <span class="ratings" style="width: 100%;"></span><!-- End .ratings -->
                                                 </div><!-- End .product-ratings -->
                                             </div><!-- End .product-container -->
                                             <div class="price-box">
@@ -186,17 +181,17 @@
                                         </div><!-- End .product-details -->
                                     </div><!-- End .product -->
                                 </div><!-- End .featured-col -->
-                    
+
                                 <div class="featured-col">
                                     <div class="product product-sm">
                                         <figure class="product-image-container">
-                                            <a href="/marketplace/view" class="product-image">
+                                            <a href="/marketplace/view/<%= item._id %>" class="product-image">
                                                 <img src="/assets/images/products/uploaded/productImage-4.jpg" alt="product">
                                             </a>
                                         </figure>
                                         <div class="product-details">
                                             <h2 class="product-title">
-                                                <a href="/marketplace/view">Bag of beans</a>
+                                                <a href="/marketplace/view/<%= item._id %>">Bag of beans</a>
                                             </h2>
                                             <div class="ratings-container">
                                                 <div class="product-ratings">
@@ -209,16 +204,16 @@
                                             </div><!-- End .price-box -->
                                         </div><!-- End .product-details -->
                                     </div><!-- End .product -->
-                    
+
                                     <div class="product product-sm">
                                         <figure class="product-image-container">
-                                            <a href="/marketplace/view" class="product-image">
+                                            <a href="/marketplace/view/<%= item._id %>" class="product-image">
                                                 <img src="/assets/images/products/uploaded/productImage-5.jpg" alt="product">
                                             </a>
                                         </figure>
                                         <div class="product-details">
                                             <h2 class="product-title">
-                                                <a href="/marketplace/view">Clean barrow</a>
+                                                <a href="/marketplace/view/<%= item._id %>">Clean barrow</a>
                                             </h2>
                                             <div class="ratings-container">
                                                 <div class="product-ratings">
@@ -230,16 +225,16 @@
                                             </div><!-- End .price-box -->
                                         </div><!-- End .product-details -->
                                     </div><!-- End .product -->
-                    
+
                                     <div class="product product-sm">
                                         <figure class="product-image-container">
-                                            <a href="/marketplace/view" class="product-image">
+                                            <a href="/marketplace/view/<%= item._id %>" class="product-image">
                                                 <img src="/assets/images/products/uploaded/productImage-6.jpg" alt="product">
                                             </a>
                                         </figure>
                                         <div class="product-details">
                                             <h2 class="product-title">
-                                                <a href="/marketplace/view">Tools</a>
+                                                <a href="/marketplace/view/<%= item._id %>">Tools</a>
                                             </h2>
                                             <div class="ratings-container">
                                                 <div class="product-ratings">

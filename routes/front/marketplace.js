@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const title= "Marketplace";
+const title = "Marketplace";
 
 /********** MODELS **********/
-var Product = require('../../models/product');
+var Product = require("../../models/product");
+var User = require("../../models/user");
 
 /********** ROUTES **********/
 
@@ -18,9 +19,25 @@ router.get("/", (req, res) => {
   });
 });
 
-// Marketplace/view route
-router.get("/view", (req, res) => {
-  res.render("view-product", { title: "Marketplace" });
+// view items in marketplace
+router.get("/view/:_id", (req, res) => {
+  var item = req.params._id;
+  var query = { _id: item };
+  Product.find(query, (err, items) => {
+    if (err) {
+      console.log(`Error: ${err}`);
+    } else {
+      items.forEach(item => {
+        User.findOne({ _id: item.owner }, (err, user) => {
+          if(err) throw Error;
+          else{
+            item.owner = user.username.toUppercase();
+            res.render("view_product", { title: title, items: items });
+          }
+        });
+      });
+    }
+  });
 });
 
 module.exports = router;

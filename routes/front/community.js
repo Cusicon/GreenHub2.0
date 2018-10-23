@@ -16,4 +16,16 @@ router.get("/", (req, res) => {
   });
 });
 
+// view user profile
+router.get("/:username", (req, res) => {
+  var username = req.params.username;
+  var query = { username: username };
+  User.findOne(query, (err, user) => {
+    if (err) throw Error;
+    else {
+      res.render("profile", { title: title, user: user });
+    }
+  });
+});
+
 module.exports = router;

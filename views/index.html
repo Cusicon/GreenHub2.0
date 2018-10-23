@@ -31,7 +31,7 @@
                         <div class="col-md-6 offset-md-6 col-lg-5 offset-lg-7">
                             <h4>Get Amazing</h4>
                             <h1>Farm Machines</h1>
-                            <a href="/marketplace/view" class="btn btn-primary">Rent Now</a>
+                            <a href="/marketplace" class="btn btn-primary">Rent Now</a>
                         </div><!-- End .col-lg-5 -->
                     </div><!-- End .row -->
                 </div><!-- End .home-slide-content -->
@@ -57,7 +57,7 @@
                                 <% var item = items[i]; %>
                                 <div class="product">
                                     <figure class="product-image-container">
-                                        <a href="/marketplace/view" class="product-image">
+                                        <a href="/marketplace/view/<%= item._id %>" class="product-image">
                                             <img src="/assets/images/products/uploaded/<%= item.productImage || `productImage-${i}.jpg` %>" alt="product">
                                         </a>
                                 
@@ -69,23 +69,15 @@
                                             </div><!-- End .product-ratings -->
                                         </div><!-- End .product-container -->
                                         <h2 class="product-title">
-                                            <a href="/marketplace/view"><%= item.product_name %></a>
+                                            <a href="/marketplace/view/<%= item._id %>"><%= item.product_name %></a>
                                         </h2>
                                         <div class="price-box">
                                             <span class="product-price">N<%= item.price %>.00</span>
                                         </div><!-- End .price-box -->
                                 
                                         <div class="product-action">
-                                            <a href="#" class="paction add-wishlist" title="Add to Wishlist">
-                                                <span>Add to Wishlist</span>
-                                            </a>
-                                
-                                            <a href="/marketplace/view" class="paction add-cart" title="Add to Basket">
+                                            <a href="/marketplace/view/<%= item._id %>" class="paction add-cart" title="Add to Basket">
                                                 <span>Add to Basket</span>
-                                            </a>
-                                
-                                            <a href="#" class="paction add-compare" title="See uploader">
-                                                <span>See uploader</span>
                                             </a>
                                         </div><!-- End .product-action -->
                                     </div><!-- End .product-details -->

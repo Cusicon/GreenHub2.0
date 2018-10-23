@@ -13,7 +13,7 @@ var Product = require("../../models/product");
 
 // Disk Storage for users
 const storage = multer.diskStorage({
-  destination: "./public/assets/images/products",
+  destination: "./public/assets/images/products/uploaded/",
   filename: (req, file, cb) => {
     cb(
       null,
