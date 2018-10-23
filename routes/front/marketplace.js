@@ -31,7 +31,7 @@ router.get("/view/:_id", (req, res) => {
         User.findOne({ _id: item.owner }, (err, user) => {
           if(err) throw Error;
           else{
-            item.owner = user.username.toUppercase();
+            item.owner = user.username;
             res.render("view_product", { title: title, items: items });
           }
         });
