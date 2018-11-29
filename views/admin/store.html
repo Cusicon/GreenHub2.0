@@ -92,13 +92,13 @@
                             <% var item = items[i]; %>
                             <div class="product product-list">
                                 <figure class="product-image-container">
-                                    <a href="/store/edit:<%= item._id %>" class="product-image">
+                                    <a href="/store/edit/<%= item._id %>" class="product-image">
                                         <img src="assets/images/products/uploaded/<%= item.productImage %>" alt="product">
                                     </a>
                                 </figure>
                                 <div class="product-details">
                                     <h2 class="product-title">
-                                        <a href="/store/edit:<%= item._id %>"><%= item.product_name %></a>
+                                        <a href="/store/edit/<%= item._id %>"><%= item.product_name %></a>
                                     </h2>
                                     <div class="ratings-container">
                                         <br>
@@ -111,7 +111,7 @@
                                     </div><!-- End .price-box -->
 
                                     <div class="product-action">
-                                        <a href="/store/upload:<%= item._id %>" class="paction add-cart" title="Upload to marketplace">
+                                        <a href="/store/upload/<%= item._id %>" class="paction add-cart" title="Upload to marketplace">
                                             <!-- Upload to marketplace -->
                                             <span>Upload to market</span>
                                         </a>
